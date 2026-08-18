@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis — Bill Von Fumetti — Booming Bookkeeping Business</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--panel:#f8fafc;--bg:#eef0f3;
+ --accent:#4f46e5;--good:#059669;--warn:#ea580c;--bad:#9f1239}
+@media(prefers-color-scheme:dark){:root{--ink:#e8eaed;--muted:#9aa3b2;--line:#2a3140;
+ --panel:#151a23;--bg:#0d1117;--accent:#818cf8}}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.55}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header.top{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.topin{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:26px;height:60px}
+.brand{font-size:15px;font-weight:600;white-space:nowrap}
+.brand span{color:var(--muted);font-weight:400}
+nav.main{display:flex;gap:20px;overflow-x:auto;scrollbar-width:none}
+nav.main::-webkit-scrollbar{display:none}
+nav.main a{font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap;
+ padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--ink)}
+nav.main a.on{color:var(--ink);border-bottom-color:var(--accent)}
+.hero{padding:48px 0 26px}
+.kick{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.hero h1{font-size:40px;margin-bottom:14px;line-height:1.15}
+.hero p{font-size:17px;color:var(--muted);max-width:820px}
+section{padding:26px 0}
+h2.sec{font-size:22px;margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{font-size:15px;margin-bottom:7px}
+.card p{font-size:14px;color:var(--muted)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.stat .n{font-size:26px;font-weight:600;letter-spacing:-.03em}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;
+ border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.tag.good{color:var(--good);border-color:var(--good)}
+.tag.warn{color:var(--warn);border-color:var(--warn)}
+.tag.bad{color:var(--bad);border-color:var(--bad)}
+figure{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+figure img{width:100%;display:block;background:#000;cursor:zoom-in}
+figcaption{padding:8px 10px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+figcaption b{color:var(--ink);font-weight:600}
+details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin-bottom:9px}
+summary{padding:12px 15px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;
+ display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary .meta{font-size:12px;color:var(--muted);font-weight:400;white-space:nowrap}
+details .body{padding:0 15px 15px;font-size:14.5px;line-height:1.72;color:var(--ink)}
+details .body p{margin-bottom:12px}
+.ts{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;font-size:12.5px}
+.searchbar{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:9px;
+ background:var(--panel);color:var(--ink);font-size:14.5px;margin-bottom:14px;font-family:inherit}
+.note{border-left:3px solid var(--accent);padding:11px 15px;background:var(--panel);
+ border-radius:0 9px 9px 0;font-size:14px;margin-bottom:13px}
+.note.warn{border-left-color:var(--warn)}
+footer{padding:36px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:34px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);display:none;align-items:center;
+ justify-content:center;z-index:99;cursor:zoom-out;padding:20px}
+#lb img{max-width:100%;max-height:92vh;object-fit:contain}
+#lb .cap{position:fixed;bottom:14px;left:0;right:0;text-align:center;color:#cbd5e1;font-size:13px;padding:0 20px}
+</style></head><body>
+<header class="top"><div class="topin">
+<div class="brand">Bill Von Fumetti <span>swipe</span></div>
+<nav class="main"><a href="index.html" class="">Overview</a><a href="analysis.html" class="on">Analysis</a><a href="transcripts.html" class="">The 5 days</a><a href="videos.html" class="">Video library</a><a href="ads.html" class="">Ads</a><a href="decks.html" class="">Decks</a><a href="pages.html" class="">Funnel pages</a><a href="copybank.html" class="">Copy bank</a><a href="board.html">Wired board</a></nav></div></header>
+<div class="wrap">
+<div class="hero"><div class="kick">Teardown</div><h1>Analysis</h1>
+<p>What they do, why it works, and what is worth taking.</p></div>
+<section>
+<div class="note"><b>Why this is the deepest capture we have.</b> Every other competitor here is
+captured at the funnel and the pitch. Bill Von Fumetti is captured across an entire five-day
+cohort <i>plus</i> a bonus second-close day — 12 hours 16 minutes and 135,840 words, including
+the full 170-minute pitch. If you want to study how a challenge actually converts, this is the
+one to read.</div>
+
+<h2 class="sec">How the five days are structured</h2>
+<div class="tablewrap"><table>
+<tr><th>Session</th><th>Length</th><th>Words</th><th>Job</th></tr>
+<tr><td>Preparty</td><td>45m</td><td>8,772</td><td>Warm the room before day one</td></tr>
+<tr><td>Day 1 — Opportunity</td><td>94m</td><td>18,874</td><td>The market, the why-now</td></tr>
+<tr><td>Day 2 — Skill / QuickBooks</td><td>97m</td><td>15,042</td><td>Teach a real, checkable skill</td></tr>
+<tr><td>Day 3 — Bulletproof</td><td>100m</td><td>17,744</td><td>De-risk the model</td></tr>
+<tr><td>Day 4 — Client acquisition</td><td>91m</td><td>18,724</td><td>Where the money comes from</td></tr>
+<tr><td><b>Day 5 — PITCH</b></td><td><b>170m</b></td><td><b>30,117</b></td><td>Value stack, price, close</td></tr>
+<tr><td>Bonus Day 6 — second close</td><td>139m</td><td>26,567</td><td>Re-close everyone who did not buy</td></tr>
+</table></div>
+<p style="margin-top:12px">Four days of teaching, then a pitch day nearly twice the length of a
+normal session, then a bonus day that is a second close in all but name. The teaching days are
+not filler — Day 2 teaches an actual certifiable skill, and that is what earns him the right to
+ask $4,997 on Day 5.</p>
+
+<h2 class="sec">The close, beat by beat</h2>
+<div class="tablewrap"><table>
+<tr><th>Time</th><th>Beat</th><th>What he does</th></tr>
+<tr><td>01:40</td><td>Value stack</td><td>Coaching calls at &ldquo;$1,997 value&rdquo;, certification &ldquo;$997&rdquo;, community &ldquo;$997&rdquo;</td></tr>
+<tr><td>01:43</td><td>Running total</td><td>Calls it out live: $7,991, then $11,982</td></tr>
+<tr><td>01:48</td><td>ROI frame</td><td>&ldquo;Getting back 50, 75 or 100 every single year… you can&rsquo;t find that in the stock market or bitcoin&rdquo;</td></tr>
+<tr><td>01:49</td><td>Anchor</td><td><b>$17,000</b> — &ldquo;you can see why it&rsquo;s a good deal financially&rdquo;</td></tr>
+<tr><td>01:52</td><td>Price</td><td><b>$4,997</b> once, or 3 &times; $1,997</td></tr>
+<tr><td>01:52</td><td>Deposit</td><td>$997 at keyboardrich.com/yes holds the spot</td></tr>
+<tr><td>01:54</td><td>Mechanics</td><td>Deposit &rarr; DocuSign &rarr; balance page, spelled out step by step</td></tr>
+<tr><td>02:03</td><td>Deadline + bonus</td><td>Sunday midnight Pacific; first 50 get lifetime access</td></tr>
+<tr><td>02:18+</td><td>Repetition</td><td>The deposit URL is repeated at least five more times before the session ends</td></tr>
+</table></div>
+
+<h2 class="sec">Worth taking</h2>
+<div class="grid g2">
+<div class="card"><h3>Defuse the phone field in the placeholder</h3><p><i>&ldquo;for text reminders
+— we will NEVER call you.&rdquo;</i> Our opt-in asks for a number and says nothing. Six words
+against a measurable drop-off, and it costs nothing to test.</p></div>
+<div class="card"><h3>Build in a second close</h3><p>His bonus Day 6 exists purely to re-close
+non-buyers, and it runs 139 minutes — not a token follow-up. We have no structured second pass
+at all after the masterclass.</p></div>
+<div class="card"><h3>Split the payment decision</h3><p>A small deposit, a signature, then the
+balance. Commitment escalates in three steps instead of one. Directly applicable to our own
+checkout.</p></div>
+<div class="card"><h3>Teach something certifiable</h3><p>Day 2 is a real QuickBooks skill with a
+certification attached. It converts &ldquo;free challenge&rdquo; into &ldquo;I already got
+something of value&rdquo; before any money is asked for.</p></div>
+</div>
+
+<h2 class="sec">Read carefully</h2>
+<p>Whisper renders his prices without the thousands separator — <b>$4,997</b> appears as
+&ldquo;49.97&rdquo; and <b>$1,997</b> as &ldquo;1997&rdquo;. Worse, &ldquo;1997&rdquo; is also a
+value-stack figure in the same pitch (&ldquo;those coaching calls are a 1997 value&rdquo;), so
+the same token means two different things. The price here is verified because it is stated three
+separate times — Day 5 at 01:52:45 and 02:02:01, and Day 6 at 01:21:29 — and all three agree.</p>
+</section>
+<footer>Captured challenge 30 July 2026 · funnel 31 July 2026. Evidence in <code>~/UNDERGROUND_FUNNELS_SSOT</code>
+and <code>~/Downloads/Swipes/BILL_VON_FUMETTI_Swipe</code>. Built with the <code>/swipe</code> skill.<br>
+Competitor research. Not for redistribution.</footer></div>
+<div id="lb"><img alt=""><div class="cap"></div></div>
+<script>
+document.addEventListener('click',function(e){
+  if(e.target.tagName==='IMG'&&e.target.closest('figure')){
+    var lb=document.getElementById('lb');
+    lb.querySelector('img').src=e.target.dataset.full||e.target.src;
+    var fc=e.target.closest('figure').querySelector('figcaption');
+    lb.querySelector('.cap').textContent=fc?fc.textContent.trim():'';
+    lb.style.display='flex';
+  } else if(e.target.closest('#lb')){document.getElementById('lb').style.display='none';}
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')document.getElementById('lb').style.display='none';
+});
+function wireSearch(id,sel){
+  var b=document.getElementById(id); if(!b)return;
+  b.addEventListener('input',function(){
+    var q=b.value.toLowerCase();
+    document.querySelectorAll(sel).forEach(function(el){
+      el.style.display = !q || el.textContent.toLowerCase().indexOf(q)>-1 ? '' : 'none';
+    });
+  });
+}
+wireSearch('tsearch','details.tr');
+wireSearch('ssearch','figure.sl');
+</script></body></html>

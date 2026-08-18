@@ -1,0 +1,38 @@
+[
+ {
+  "stem": "01_Live_opt-in",
+  "full": "full/bvf_01_Live_opt-in.jpg",
+  "thumb": "thumb/bvf_01_Live_opt-in.jpg",
+  "w": 1100,
+  "h": 15503,
+  "tw": 420,
+  "th": 5919
+ },
+ {
+  "stem": "02_VIP_TY_page",
+  "full": "full/bvf_02_VIP_TY_page.jpg",
+  "thumb": "thumb/bvf_02_VIP_TY_page.jpg",
+  "w": 1100,
+  "h": 12988,
+  "tw": 420,
+  "th": 4959
+ },
+ {
+  "stem": "03_Facebook_group_next_steps",
+  "full": "full/bvf_03_Facebook_group_next_steps.jpg",
+  "thumb": "thumb/bvf_03_Facebook_group_next_steps.jpg",
+  "w": 1100,
+  "h": 1343,
+  "tw": 420,
+  "th": 513
+ },
+ {
+  "stem": "BVF_01_deposit_page",
+  "full": "full/bvf_BVF_01_deposit_page.jpg",
+  "thumb": "thumb/bvf_BVF_01_deposit_page.jpg",
+  "w": 1100,
+  "h": 780,
+  "tw": 420,
+  "th": 298
+ }
+]
